@@ -1,27 +1,23 @@
-# MyApp
+# MyApp (온라인 시험 채점 시스템)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Back-End API Server
 
-## Build
+Java Framework - eGov 3.8 . Navigate to `http://localhost:8080/`. use the maria DB 10.2.0
+Use API data - both Model and View in the web MVC framework.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Member management
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Use Json Map - egovMapList
 
-## Running end-to-end tests
+## Exam management
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Use Json Map - examVOList
