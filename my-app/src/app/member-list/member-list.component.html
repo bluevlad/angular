@@ -1,0 +1,25 @@
+<div class="col-md-6 user-container">
+  <h2 style="margin: auto"> User Details</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>userId</th>
+      <th>userNm</th>
+      <th>emailAdres</th>
+      <th>moblphonNo</th>
+      <th>groupId</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let member of member">
+      <td>{{member.uniqId}}</td>
+      <td>{{member.userId}}</td>
+      <td>{{member.userNm}}</td>
+      <td>{{member.emailAdres}}</td>
+      <td>{{member.moblphonNo}}</td>
+      <td>{{member.groupId}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
