@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +16,7 @@ import { ExamService } from './service/exam.service';
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     routing,
     ReactiveFormsModule,
     HttpClientModule
