@@ -42,7 +42,6 @@ describe('HeaderComponent', () => {
   });
 
   beforeEach(() => {
-    cookieServiceSpy.get.and.returnValue('en');
     progressBarServiceSpy.getUpdateProgressBar.and.returnValue(of('query'));
 
     fixture = TestBed.createComponent(HeaderComponent);
@@ -54,10 +53,4 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   }));
 
-  it('should change the language', (() => {
-    cookieServiceSpy.put.and.returnValue(true);
-    expect(component.selectedLanguage).toBe('en');
-    component.changeLanguage('ko');
-    expect(component.selectedLanguage).toBe('ko');
-  }));
 });

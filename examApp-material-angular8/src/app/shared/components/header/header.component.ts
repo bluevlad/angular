@@ -15,18 +15,13 @@ export class HeaderComponent implements OnInit {
   selectedLanguage: string;
   progressBarMode: string;
   currentUrl: string;
-  languages: any[];
 
   constructor(@Inject(APP_CONFIG) public appConfig: any,
               private progressBarService: ProgressBarService,
               private cookieService: CookieService,
-              private router: Router) {
-    this.languages = [{name: 'en', label: 'English'}, {name: 'ko', label: '한글'}];
-  }
+              private router: Router) { }
 
   ngOnInit() {
-    this.selectedLanguage = this.cookieService.get('language') || 'ko';
-
     this.progressBarService.getUpdateProgressBar().subscribe((mode: string) => {
       this.progressBarMode = mode;
     });
@@ -38,8 +33,4 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  changeLanguage(language: string): void {
-    this.cookieService.put('language', language);
-    this.selectedLanguage = language;
-  }
 }

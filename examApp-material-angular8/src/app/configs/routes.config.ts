@@ -9,6 +9,8 @@ const basePaths = {
 const routesNames = {
   home: '',
   error404: '404',
+  member: 'member-list',
+  exam: 'exam-list',
   heroes: {
     basePath: basePaths.heroes
   }
