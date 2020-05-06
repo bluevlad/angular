@@ -6,7 +6,7 @@ export const AppConfig: any = {
   votesLimit: 3,
   topHeroesLimit: 5,
   snackBarDuration: 3000,
-  repositoryURL: 'https://github.com/bluevlad/angular/tree/master/my-app',
+  repositoryURL: 'https://github.com/bluevlad/angular/tree/master/examApp-material-angular8',
   sentryDSN: 'https://38434a1b115f41d3a31e356cdc496c06@sentry.io/1315526',
   cspDirectives: {
     defaultSrc: [
