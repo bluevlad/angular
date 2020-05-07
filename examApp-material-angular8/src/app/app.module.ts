@@ -85,7 +85,7 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
     {
       provide: TRANSLATIONS,
       useFactory: (locale) => {
-        locale = locale || 'en';
+        locale = locale || 'ko';
         return require(`raw-loader!../i18n/messages.${locale}.xlf`);
       },
       deps: [LOCALE_ID]

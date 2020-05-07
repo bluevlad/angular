@@ -2,31 +2,19 @@ import {InjectionToken} from '@angular/core';
 
 export let ROUTES_CONFIG = new InjectionToken('routes.config');
 
-const basePaths = {
-  heroes: 'heroes',
-};
-
 const routesNames = {
   home: '',
   error404: '404',
-  member: 'member-list',
-  exam: 'exam-list',
-  heroes: {
-    basePath: basePaths.heroes
-  }
+  member: '회원정보',
+  exam: '시험정보',
 };
 
 export const RoutesConfig: any = {
   routesNames,
   routes: {
-    home: `/${routesNames.home}`,
+    home: ``,
+    member: `/member-list`,
+    exam: `/member-list`,
     error404: `/${routesNames.error404}`,
-    heroes: {
-      detail: getHeroDetail
-    }
   }
 };
-
-export function getHeroDetail(id) {
-  return `/${basePaths.heroes}/${id}`;
-}

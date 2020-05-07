@@ -47,7 +47,7 @@ describe('AppComponent', () => {
           }
         },
         {provide: PLATFORM_ID, useValue: 'browser'},
-        {provide: LOCALE_ID, useValue: 'en'}
+        {provide: LOCALE_ID, useValue: 'ko'}
       ]
     });
   });

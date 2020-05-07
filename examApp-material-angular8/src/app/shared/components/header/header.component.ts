@@ -26,11 +26,6 @@ export class HeaderComponent implements OnInit {
       this.progressBarMode = mode;
     });
 
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        this.currentUrl = event.url;
-      }
-    });
   }
 
 }
