@@ -9,9 +9,9 @@ import { routing } from './app.routing';
 
 import { MemberListComponent } from './member-list/member-list.component';
 import { MemberService } from './service/member.service';
-
 import { ExamListComponent } from './exam/list/exam-list.component';
 import { ExamService } from './service/exam.service';
+import { StatSbjComponent } from './exam/stat/sbj.component';
 
 @NgModule({
   imports: [
@@ -24,7 +24,8 @@ import { ExamService } from './service/exam.service';
  declarations: [
     AppComponent,
     MemberListComponent,
-    ExamListComponent
+    ExamListComponent,
+    StatSbjComponent,
   ],
   providers: [ MemberService, ExamService ],
   bootstrap: [AppComponent]

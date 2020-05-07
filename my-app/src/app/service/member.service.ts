@@ -12,11 +12,11 @@ const httpOptions = {
 @Injectable()
 export class MemberService {
 
-    constructor(private http: HttpClient) { }
-        baseUrl = 'http://localhost:8080/api/member/list/';
+  constructor(private http: HttpClient) { }
+  baseUrl = 'http://119.207.157.45:8080/api';
 
     getMembers(): Observable<ApiResponse> {
-      return this.http.get<ApiResponse>(this.baseUrl);
+      return this.http.get<ApiResponse>(this.baseUrl + '/member/list');
     }
 
     createMember(member: Member): Observable<ApiResponse> {
