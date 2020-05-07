@@ -1,7 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {AppConfig} from '../../configs/app.config';
-import {Observable} from 'rxjs';
-import {defaultIfEmpty, map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home-page',

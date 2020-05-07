@@ -1,7 +1,6 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {HeaderComponent} from './header.component';
 import {configureTestSuite} from 'ng-bullet';
-import {SearchBarComponent} from '../search-bar/search-bar.component';
 import {MockComponent} from 'ng-mocks';
 import {APP_CONFIG, AppConfig} from '../../../configs/app.config';
 import {RouterTestingModule} from '@angular/router/testing';
@@ -30,7 +29,6 @@ describe('HeaderComponent', () => {
         MatProgressBarModule
       ],
       declarations: [
-        MockComponent(SearchBarComponent),
         HeaderComponent
       ],
       providers: [

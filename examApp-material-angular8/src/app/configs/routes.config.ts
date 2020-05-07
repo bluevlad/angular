@@ -15,6 +15,6 @@ export const RoutesConfig: any = {
     home: ``,
     member: `/member-list`,
     exam: `/member-list`,
-    error404: `/${routesNames.error404}`,
+    error404: `/404`,
   }
 };

@@ -4,7 +4,6 @@ import {Meta, Title} from '@angular/platform-browser';
 import {configureTestSuite} from 'ng-bullet';
 import {NavigationEnd, Router} from '@angular/router';
 import {HeaderComponent} from './shared/components/header/header.component';
-import {SearchBarComponent} from './shared/components/search-bar/search-bar.component';
 import {FooterComponent} from './shared/components/footer/footer.component';
 import {NgxExampleLibraryComponent} from '@ismaestro/ngx-example-library';
 import {of} from 'rxjs';
@@ -28,7 +27,6 @@ describe('AppComponent', () => {
       ],
       declarations: [
         MockComponent(HeaderComponent),
-        MockComponent(SearchBarComponent),
         MockComponent(FooterComponent),
         MockComponent(NgxExampleLibraryComponent),
         AppComponent
