@@ -5,8 +5,8 @@ export let ROUTES_CONFIG = new InjectionToken('routes.config');
 const routesNames = {
   home: '',
   error404: '404',
-  member: '회원정보',
-  exam: '시험정보',
+  member: 'member-list',
+  exam: 'exam-list',
 };
 
 export const RoutesConfig: any = {
@@ -14,7 +14,7 @@ export const RoutesConfig: any = {
   routes: {
     home: ``,
     member: `/member-list`,
-    exam: `/member-list`,
+    exam: `/exam-list`,
     error404: `/404`,
   }
 };
