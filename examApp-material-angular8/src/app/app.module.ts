@@ -31,6 +31,8 @@ import { MemberService } from './service/member.service';
 import { ExamListComponent } from './exam/list/exam-list.component';
 import { ExamService } from './service/exam.service';
 
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+
 declare const require;
 
 export function appInitializer(document: HTMLDocument, platformId: object) {
@@ -99,7 +101,8 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
       useFactory: appInitializer,
       deps: [DOCUMENT, PLATFORM_ID],
       multi: true
-    }
+    },
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
   ],
   bootstrap: [AppComponent]
 })
