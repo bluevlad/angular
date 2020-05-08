@@ -74,7 +74,7 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
     Error404PageComponent,
     AppComponent,
     MemberListComponent,
-    ExamListComponent
+    ExamListComponent,
   ],
   providers: [
     MemberService, ExamService,
@@ -97,7 +97,7 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
       deps: [DOCUMENT, PLATFORM_ID],
       multi: true
     }
-  ]
+  ],
 })
 
 export class AppModule {
