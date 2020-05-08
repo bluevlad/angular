@@ -88,4 +88,4 @@ import {MatTreeModule} from '@angular/material/tree';
   ]
 })
 
-export class DemoMaterialModule {}
+export class MaterialModule {}

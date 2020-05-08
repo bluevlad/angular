@@ -20,8 +20,10 @@ import {ENDPOINTS_CONFIG, EndpointsConfig} from './configs/endpoints.config';
 import {LazyLoadImageModule} from 'ng-lazyload-image';
 import {RouterModule} from '@angular/router';
 import {PrebootModule} from 'preboot';
-
 import { routing } from './app.routing';
+
+/** Material Module을 모두 사용하기 위해서 lib로 참조가능하도록 추가 */
+import { MaterialModule } from './modules/material/material-module';
 
 import { MemberListComponent } from './member/list/member-list.component';
 import { MemberService } from './service/member.service';
@@ -68,6 +70,7 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
     CoreModule,
     SharedModule,
     routing,
+    MaterialModule,
   ],
   declarations: [
     HomePageComponent,
@@ -98,6 +101,7 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
       multi: true
     }
   ],
+  bootstrap: [AppComponent]
 })
 
 export class AppModule {
