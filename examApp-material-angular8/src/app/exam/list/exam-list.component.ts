@@ -14,6 +14,8 @@ export class ExamListComponent implements OnInit {
 
   exam: Exam[];
 
+  displayedColumns: string[] = ['examCd', 'examNm', 'isUse'];
+
   constructor(private router: Router, private examService: ExamService) { }
 
   ngOnInit() {
