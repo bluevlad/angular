@@ -1,4 +1,4 @@
-import {APP_INITIALIZER, ErrorHandler, LOCALE_ID, NgModule, PLATFORM_ID, TRANSLATIONS} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {SharedModule} from './shared/shared.module';
@@ -12,6 +12,7 @@ import {Error404PageComponent} from './pages/error404-page/error404-page.compone
 import {RouterModule} from '@angular/router';
 import {PrebootModule} from 'preboot';
 import { routing } from './app.routing';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 /** Material Module을 모두 사용하기 위해서 lib로 참조가능하도록 추가 */
 import { MaterialModule } from './shared/modules/material.module';
@@ -39,6 +40,7 @@ import {NestedMenuExample} from './shared/left/nested-menu-example';
     SharedModule,
     routing,
     MaterialModule,
+    FormsModule, ReactiveFormsModule,
   ],
   entryComponents: [NestedMenuExample],
   declarations: [

@@ -1,49 +1,33 @@
 <div class="col-md-6 user-container">
-  <h2 style="margin: auto"> 사용자 정보 목록</h2>
+  <div>
+    <h2 style="margin: 20px"> 사용자 정보 등록</h2>
+  </div>
 
-<table mat-table [dataSource]="member" class="mat-elevation-z8">
+  <form class="example-form">
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+    <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>User Id</mat-label>
+      <input matInput>
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width">
+      <mat-label>User Nm</mat-label>
+      <input matInput>
+    </mat-form-field></td>
+  </tr></table>
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="Id">
-    <th mat-header-cell *matHeaderCellDef> Id. </th>
-    <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
-  </ng-container>
-
-  <!-- Name Column -->
-  <ng-container matColumnDef="userId">
-    <th mat-header-cell *matHeaderCellDef> userId </th>
-    <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
-  </ng-container>
-
-  <!-- Weight Column -->
-  <ng-container matColumnDef="userNm">
-    <th mat-header-cell *matHeaderCellDef> userNm </th>
-    <td mat-cell *matCellDef="let element"> {{element.userNm}} </td>
-  </ng-container>
-
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="emailAdres">
-    <th mat-header-cell *matHeaderCellDef> emailAdres </th>
-    <td mat-cell *matCellDef="let element"> {{element.emailAdres}} </td>
-  </ng-container>
-
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="moblphonNo">
-    <th mat-header-cell *matHeaderCellDef> moblphonNo </th>
-    <td mat-cell *matCellDef="let element"> {{element.moblphonNo}} </td>
-  </ng-container>
-
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="groupId">
-    <th mat-header-cell *matHeaderCellDef> groupId </th>
-    <td mat-cell *matCellDef="let element"> {{element.groupId}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+             placeholder="Ex. pat@example.com">
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    
+  </form>  
 </div>

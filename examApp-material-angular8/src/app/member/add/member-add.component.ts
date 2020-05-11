@@ -1,9 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
 
-import { MemberService } from '../../service/member.service';
-import { Member } from '../../model/member';
-
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-member-add',
@@ -11,22 +16,14 @@ import { Member } from '../../model/member';
   styleUrls: ['./member-add.component.css']
 })
 
-export class MemberAddComponent implements OnInit {
 
-  member: Member[];
+export class MemberAddComponent {
 
-  displayedColumns: string[] = ['Id', 'userId', 'userNm', 'emailAdres', 'moblphonNo', 'groupId'];
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
 
-  constructor(private router: Router, private memberService: MemberService) { }
-
-  ngOnInit() {
-
-      this.memberService.getMembers()
-      .subscribe( data => {
-        this.member = data.egovMapList;
-      });
-
-  }
-
+  matcher = new MyErrorStateMatcher();
 
 }
