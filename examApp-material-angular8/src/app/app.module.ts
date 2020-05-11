@@ -1,6 +1,5 @@
 import {APP_INITIALIZER, ErrorHandler, LOCALE_ID, NgModule, PLATFORM_ID, TRANSLATIONS} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
-import {CoreModule} from './modules/core/core.module';
 import {AppComponent} from './app.component';
 import {APP_CONFIG, AppConfig} from './configs/app.config';
 import {SharedModule} from './shared/shared.module';
@@ -69,7 +68,6 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
       }
     }),
     LazyLoadImageModule.forRoot({}),
-    CoreModule,
     SharedModule,
     routing,
     MaterialModule,
