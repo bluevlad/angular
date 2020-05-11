@@ -19,7 +19,6 @@ export function getRequest(): any {
       provide: REQUEST,
       useFactory: getRequest
     },
-    {provide: 'ORIGIN_URL', useValue: location.origin},
   ],
   bootstrap: [
     AppComponent

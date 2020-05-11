@@ -9,7 +9,6 @@ import {NgxExampleLibraryComponent} from '@ismaestro/ngx-example-library';
 import {of} from 'rxjs';
 import {MockComponent} from 'ng-mocks';
 import {RouterTestingModule} from '@angular/router/testing';
-import {I18n} from '@ngx-translate/i18n-polyfill';
 import {LOCALE_ID, PLATFORM_ID} from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
@@ -35,17 +34,12 @@ describe('AppComponent', () => {
         {provide: MatSnackBar, useValue: matSnackBarSpy},
         {provide: Meta, useValue: {}},
         {
-          provide: I18n, useValue: () => {
-          }
-        },
-        {
           provide: Title, useValue: {
             setTitle: () => {
             }
           }
         },
         {provide: PLATFORM_ID, useValue: 'browser'},
-        {provide: LOCALE_ID, useValue: 'ko'}
       ]
     });
   });

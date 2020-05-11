@@ -13,7 +13,6 @@ const routes: Routes = [
   {path: routesNames.member, component: MemberListComponent, pathMatch: 'full'},
   {path: routesNames.exam, component: ExamListComponent, pathMatch: 'full'},
   {path: routesNames.error404, component: Error404PageComponent},
-  {path: 'ko', redirectTo: ''}, // because english language is the default one
 
   // otherwise redirect to 404
   {path: '**', redirectTo: RoutesConfig.routes.error404}
