@@ -1,6 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {APP_CONFIG} from '../../configs/app.config';
-import {ProgressBarService} from '../services/progress-bar.service';
 import {NavigationEnd, Router} from '@angular/router';
 import {CookieService} from 'ngx-cookie';
 
@@ -17,15 +16,10 @@ export class HeaderComponent implements OnInit {
   currentUrl: string;
 
   constructor(@Inject(APP_CONFIG) public appConfig: any,
-              private progressBarService: ProgressBarService,
               private cookieService: CookieService,
               private router: Router) { }
 
   ngOnInit() {
-    this.progressBarService.getUpdateProgressBar().subscribe((mode: string) => {
-      this.progressBarMode = mode;
-    });
-
   }
 
 }
