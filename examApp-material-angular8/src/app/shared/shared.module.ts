@@ -9,7 +9,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {NgxExampleLibraryModule} from '@ismaestro/ngx-example-library';
 import {NgxScrollToFirstInvalidModule} from '@ismaestro/ngx-scroll-to-first-invalid';
-import {LoadingPlaceholderComponent} from './components/loading-placeholder/loading-placeholder.component';
 import {CapitalizeFirstPipe} from './pipes/capitalize-first.pipe';
 import {LazyLoadImageModule} from 'ng-lazyload-image';
 
@@ -28,7 +27,6 @@ import {LazyLoadImageModule} from 'ng-lazyload-image';
     HeaderComponent,
     FooterComponent,
     SpinnerComponent,
-    LoadingPlaceholderComponent,
     CapitalizeFirstPipe,
   ],
   exports: [
@@ -40,7 +38,6 @@ import {LazyLoadImageModule} from 'ng-lazyload-image';
     FooterComponent,
     SpinnerComponent,
     NgxScrollToFirstInvalidModule,
-    LoadingPlaceholderComponent,
     CapitalizeFirstPipe,
     LazyLoadImageModule,
   ]
