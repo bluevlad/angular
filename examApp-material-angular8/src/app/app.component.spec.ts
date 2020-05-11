@@ -3,8 +3,8 @@ import {AppComponent} from './app.component';
 import {Meta, Title} from '@angular/platform-browser';
 import {configureTestSuite} from 'ng-bullet';
 import {NavigationEnd, Router} from '@angular/router';
-import {HeaderComponent} from './shared/components/header/header.component';
-import {FooterComponent} from './shared/components/footer/footer.component';
+import {HeaderComponent} from './shared/header/header.component';
+import {FooterComponent} from './shared/footer/footer.component';
 import {NgxExampleLibraryComponent} from '@ismaestro/ngx-example-library';
 import {of} from 'rxjs';
 import {MockComponent} from 'ng-mocks';
@@ -61,7 +61,4 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   }));
 
-  it('should check browser features', (() => {
-    expect(component.checkBrowserFeatures()).toBeTruthy();
-  }));
 });

@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {APP_CONFIG} from '../../../configs/app.config';
-import {ProgressBarService} from '../../services/progress-bar.service';
+import {APP_CONFIG} from '../../configs/app.config';
+import {ProgressBarService} from '../services/progress-bar.service';
 import {NavigationEnd, Router} from '@angular/router';
 import {CookieService} from 'ngx-cookie';
 

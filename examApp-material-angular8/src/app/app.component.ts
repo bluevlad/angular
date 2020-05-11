@@ -2,7 +2,6 @@ import {Component, Inject, LOCALE_ID, OnInit, PLATFORM_ID, Renderer2} from '@ang
 import {Meta, Title} from '@angular/platform-browser';
 import {NavigationEnd, Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {UtilsHelperService} from './shared/services/utils-helper.service';
 import {DOCUMENT, isPlatformBrowser} from '@angular/common';
 import {I18n} from '@ngx-translate/i18n-polyfill';
 
