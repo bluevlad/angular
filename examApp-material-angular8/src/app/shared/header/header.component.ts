@@ -1,7 +1,8 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {APP_CONFIG} from '../../configs/app.config';
-import {NavigationEnd, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {CookieService} from 'ngx-cookie';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,10 @@ export class HeaderComponent implements OnInit {
 
   constructor(@Inject(APP_CONFIG) public appConfig: any,
               private cookieService: CookieService,
-              private router: Router) { }
+              private title: Title,
+              private router: Router,
+              ) {
+              }
 
   ngOnInit() {
   }

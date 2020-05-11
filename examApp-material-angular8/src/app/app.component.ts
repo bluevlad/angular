@@ -37,4 +37,20 @@ export class AppComponent implements OnInit {
     this.title.setTitle('온라인 채점');
   }
 
+  checkBrowserFeatures() {
+    let supported = true;
+    for (const feature in Modernizr) {
+      if (Modernizr.hasOwnProperty(feature) &&
+        typeof Modernizr[feature] === 'boolean' && Modernizr[feature] === false) {
+        supported = false;
+        break;
+      }
+    }
+
+    if (!supported) {
+      this.snackBar.open(this.i18n({value: 'Update your browser', id: '@@updateBrowser'}), 'OK');
+    }
+
+    return supported;
+  }
 }
