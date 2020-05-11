@@ -32,6 +32,7 @@ import { ExamListComponent } from './exam/list/exam-list.component';
 import { ExamService } from './service/exam.service';
 
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import {NestedMenuExample} from './shared/left/nested-menu-example';
 
 declare const require;
 
@@ -74,12 +75,14 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
     routing,
     MaterialModule,
   ],
+  entryComponents: [NestedMenuExample],
   declarations: [
     HomePageComponent,
     Error404PageComponent,
     AppComponent,
     MemberListComponent,
     ExamListComponent,
+    NestedMenuExample,
   ],
   providers: [
     MemberService, ExamService,
@@ -104,8 +107,9 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
     },
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent, NestedMenuExample ]
 })
 
 export class AppModule {
 }
+

@@ -35,50 +35,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.title.setTitle('App title');
-    this.onEvents();
-    this.checkBrowser();
+    this.title.setTitle('온라인 채점');
   }
 
-  onEvents() {
-    this.router.events.subscribe((event: any) => {
-      if (event instanceof NavigationEnd) {
-        switch (event.urlAfterRedirects) {
-          case '/':
-            this.meta.updateTag({
-              name: 'description',
-              content: this.i18n({value: 'Home meta description', id: '@@homeMetaDescription'})
-            });
-            break;
-        }
-      }
-    });
-  }
-
-  checkBrowser() {
-    if (isPlatformBrowser(this.platformId)) {
-      if (UtilsHelperService.isBrowserValid()) {
-        this.checkBrowserFeatures();
-      } else {
-        this.snackBar.open(this.i18n({value: 'Change your browser', id: '@@changeBrowser'}), 'OK');
-      }
-    }
-  }
-
-  checkBrowserFeatures() {
-    let supported = true;
-    for (const feature in Modernizr) {
-      if (Modernizr.hasOwnProperty(feature) &&
-        typeof Modernizr[feature] === 'boolean' && Modernizr[feature] === false) {
-        supported = false;
-        break;
-      }
-    }
-
-    if (!supported) {
-      this.snackBar.open(this.i18n({value: 'Update your browser', id: '@@updateBrowser'}), 'OK');
-    }
-
-    return supported;
-  }
 }
