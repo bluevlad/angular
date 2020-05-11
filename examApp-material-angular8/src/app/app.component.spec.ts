@@ -17,7 +17,6 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
 
   const matSnackBarSpy = jasmine.createSpyObj('MatSnackBar', ['open']);
-  const routerSpy = jasmine.createSpyObj('Router', ['events']);
 
   configureTestSuite(() => {
     TestBed.configureTestingModule({
@@ -33,13 +32,7 @@ describe('AppComponent', () => {
       providers: [
         {provide: MatSnackBar, useValue: matSnackBarSpy},
         {provide: Meta, useValue: {}},
-        {
-          provide: Title, useValue: {
-            setTitle: () => {
-            }
-          }
-        },
-        {provide: PLATFORM_ID, useValue: 'browser'},
+        {provide: Title, useValue: {setTitle: () => {}}},
       ]
     });
   });
@@ -47,12 +40,7 @@ describe('AppComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.debugElement.componentInstance;
-    routerSpy.events.and.returnValue(of(new NavigationEnd(1, '', '/')));
     fixture.detectChanges();
   });
-
-  it('should create the app', (() => {
-    expect(component).toBeTruthy();
-  }));
 
 });

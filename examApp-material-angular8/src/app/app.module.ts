@@ -1,17 +1,14 @@
 import {APP_INITIALIZER, ErrorHandler, LOCALE_ID, NgModule, PLATFORM_ID, TRANSLATIONS} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {APP_CONFIG, AppConfig} from './configs/app.config';
 import {SharedModule} from './shared/shared.module';
 import {FirebaseModule} from './shared/modules/firebase.module';
 import {BrowserModule, ɵgetDOM} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {CookieModule} from 'ngx-cookie';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ROUTES_CONFIG, RoutesConfig} from './configs/routes.config';
 import {HomePageComponent} from './pages/home-page/home-page.component';
 import {Error404PageComponent} from './pages/error404-page/error404-page.component';
-import {ENDPOINTS_CONFIG, EndpointsConfig} from './configs/endpoints.config';
 import {RouterModule} from '@angular/router';
 import {PrebootModule} from 'preboot';
 import { routing } from './app.routing';
@@ -55,9 +52,6 @@ import {NestedMenuExample} from './shared/left/nested-menu-example';
   ],
   providers: [
     MemberService, ExamService,
-    {provide: APP_CONFIG, useValue: AppConfig},
-    {provide: ROUTES_CONFIG, useValue: RoutesConfig},
-    {provide: ENDPOINTS_CONFIG, useValue: EndpointsConfig},
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
   ],
   bootstrap: [ AppComponent, NestedMenuExample ]

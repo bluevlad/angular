@@ -2,20 +2,19 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {Error404PageComponent} from './pages/error404-page/error404-page.component';
 import {HomePageComponent} from './pages/home-page/home-page.component';
-import {RoutesConfig} from './configs/routes.config';
 import { MemberListComponent } from './member/list/member-list.component';
+import { MemberAddComponent } from './member/add/member-add.component';
 import { ExamListComponent } from './exam/list/exam-list.component';
 
-const routesNames = RoutesConfig.routesNames;
-
 const routes: Routes = [
-  {path: routesNames.home, component: HomePageComponent, pathMatch: 'full'},
-  {path: routesNames.member, component: MemberListComponent, pathMatch: 'full'},
-  {path: routesNames.exam, component: ExamListComponent, pathMatch: 'full'},
-  {path: routesNames.error404, component: Error404PageComponent},
+  {path: '', component: HomePageComponent, pathMatch: 'full'},
+  {path: 'member-list', component: MemberListComponent, pathMatch: 'full'},
+  {path: 'member-add', component: MemberAddComponent, pathMatch: 'full'},
+  {path: 'exam-list', component: ExamListComponent, pathMatch: 'full'},
+  {path: 'error404', component: Error404PageComponent},
 
   // otherwise redirect to 404
-  {path: '**', redirectTo: RoutesConfig.routes.error404}
+  {path: '**', redirectTo: '/error404'}
 ];
 
 @NgModule({
