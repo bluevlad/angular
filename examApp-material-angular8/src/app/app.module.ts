@@ -6,7 +6,6 @@ import {APP_CONFIG, AppConfig} from './configs/app.config';
 import {SharedModule} from './shared/shared.module';
 import {NgxExampleLibraryModule} from '@ismaestro/ngx-example-library';
 import {FirebaseModule} from './shared/modules/firebase.module';
-import {SentryErrorHandler} from './modules/core/sentry.errorhandler';
 import {BrowserModule, ɵgetDOM} from '@angular/platform-browser';
 import {I18n} from '@ngx-translate/i18n-polyfill';
 import {HttpClientModule} from '@angular/common/http';
@@ -23,7 +22,7 @@ import {PrebootModule} from 'preboot';
 import { routing } from './app.routing';
 
 /** Material Module을 모두 사용하기 위해서 lib로 참조가능하도록 추가 */
-import { MaterialModule } from './modules/material/material-module';
+import { MaterialModule } from './shared/modules/material.module';
 
 import { MemberListComponent } from './member/list/member-list.component';
 import { MemberService } from './service/member.service';
@@ -89,7 +88,6 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
     {provide: APP_CONFIG, useValue: AppConfig},
     {provide: ROUTES_CONFIG, useValue: RoutesConfig},
     {provide: ENDPOINTS_CONFIG, useValue: EndpointsConfig},
-    {provide: ErrorHandler, useClass: SentryErrorHandler},
     {
       provide: TRANSLATIONS,
       useFactory: (locale) => {
