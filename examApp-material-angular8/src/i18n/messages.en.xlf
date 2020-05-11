@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" datatype="plaintext" original="ng2.template" target-language="en">
+  <file source-language="ko" datatype="plaintext" original="ng2.template" target-language="ko">
     <body>
       <trans-unit id="home" datatype="html">
         <source>
           Home
-        </source><target state="final">Home</target>
+        </source><target state="final">홈</target>
       <context-group purpose="location"><context context-type="sourcefile">app/shared/components/header/header.component.html</context>
       <context context-type="linenumber">5</context></context-group>
       </trans-unit>
@@ -16,12 +16,12 @@
           Heroes list
         </target>
       <context-group purpose="location"><context context-type="sourcefile">app/shared/components/header/header.component.html</context>
-      <context context-type="linenumber">11</context></context-group>
+      <context context-type="linenumber">8</context></context-group>
       <context-group purpose="location"><context context-type="sourcefile">app/modules/heroes/pages/heroes-list-page/heroes-list-page.component.html</context>
       <context context-type="linenumber">2</context></context-group>
       </trans-unit>
       <trans-unit id="findHero" datatype="html">
-        <source>Look for a hero!</source><target state="final">Look for a hero!</target>
+        <source>Look for a hero!</source><target state="final">영웅을 찾으세요!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/search-bar/search-bar.component.html</context>
           <context context-type="linenumber">2</context>

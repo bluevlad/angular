@@ -15,7 +15,6 @@ import {ROUTES_CONFIG, RoutesConfig} from './configs/routes.config';
 import {HomePageComponent} from './pages/home-page/home-page.component';
 import {Error404PageComponent} from './pages/error404-page/error404-page.component';
 import {ENDPOINTS_CONFIG, EndpointsConfig} from './configs/endpoints.config';
-import {LazyLoadImageModule} from 'ng-lazyload-image';
 import {RouterModule} from '@angular/router';
 import {PrebootModule} from 'preboot';
 import { routing } from './app.routing';
@@ -24,6 +23,7 @@ import { routing } from './app.routing';
 import { MaterialModule } from './shared/modules/material.module';
 
 import { MemberListComponent } from './member/list/member-list.component';
+import { MemberAddComponent } from './member/add/member-add.component';
 import { MemberService } from './service/member.service';
 
 import { ExamListComponent } from './exam/list/exam-list.component';
@@ -62,12 +62,6 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
     BrowserAnimationsModule,
     CookieModule.forRoot(),
     FirebaseModule,
-    NgxExampleLibraryModule.forRoot({
-      config: {
-        say: 'hello'
-      }
-    }),
-    LazyLoadImageModule.forRoot({}),
     SharedModule,
     routing,
     MaterialModule,
@@ -78,6 +72,7 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
     Error404PageComponent,
     AppComponent,
     MemberListComponent,
+    MemberAddComponent,
     ExamListComponent,
     NestedMenuExample,
   ],

@@ -8,7 +8,6 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {NgxExampleLibraryModule} from '@ismaestro/ngx-example-library';
 import {NgxScrollToFirstInvalidModule} from '@ismaestro/ngx-scroll-to-first-invalid';
-import {LazyLoadImageModule} from 'ng-lazyload-image';
 
 @NgModule({
   imports: [
@@ -19,7 +18,6 @@ import {LazyLoadImageModule} from 'ng-lazyload-image';
     RouterModule,
     NgxExampleLibraryModule,
     NgxScrollToFirstInvalidModule,
-    LazyLoadImageModule
   ],
   declarations: [
     HeaderComponent,
@@ -33,7 +31,6 @@ import {LazyLoadImageModule} from 'ng-lazyload-image';
     HeaderComponent,
     FooterComponent,
     NgxScrollToFirstInvalidModule,
-    LazyLoadImageModule,
   ]
 })
 
