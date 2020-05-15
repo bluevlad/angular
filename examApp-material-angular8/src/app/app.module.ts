@@ -22,10 +22,13 @@ import { MemberAddComponent } from './member/add/member-add.component';
 import { MemberService } from './service/member.service';
 
 import { ExamListComponent } from './exam/list/exam-list.component';
+import { ExamAddComponent } from './exam/add/exam-add.component';
 import { ExamService } from './service/exam.service';
 
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import {NestedMenuExample} from './shared/left/nested-menu-example';
+
+import { MessagesComponent } from './shared/messages/messages.component';
 
 @NgModule({
   imports: [
@@ -50,7 +53,9 @@ import {NestedMenuExample} from './shared/left/nested-menu-example';
     MemberListComponent,
     MemberAddComponent,
     ExamListComponent,
+    ExamAddComponent,
     NestedMenuExample,
+    MessagesComponent,
   ],
   providers: [
     MemberService, ExamService,
