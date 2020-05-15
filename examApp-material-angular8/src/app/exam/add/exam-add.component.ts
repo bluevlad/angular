@@ -16,14 +16,4 @@ export class ExamAddComponent {
     private examService: ExamService,
   ) {}
 
-  exam: Exam;
-
-  addExam(examForm: NgForm): void {
-//    this.snackBar.open('Cant vote anymore');
-    this.examService.createExam(examForm.value.examNm, examForm.value.isUse)
-    .then( data => {
-      this.exam = data;
-    });
-  }
-
 }

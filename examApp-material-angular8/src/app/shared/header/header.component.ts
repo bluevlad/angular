@@ -1,5 +1,4 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {APP_CONFIG} from '../../configs/app.config';
 import {Router} from '@angular/router';
 import {CookieService} from 'ngx-cookie';
 import {Title} from '@angular/platform-browser';
@@ -16,7 +15,7 @@ export class HeaderComponent implements OnInit {
   progressBarMode: string;
   currentUrl: string;
 
-  constructor(@Inject(APP_CONFIG) public appConfig: any,
+  constructor(
               private cookieService: CookieService,
               private title: Title,
               private router: Router,

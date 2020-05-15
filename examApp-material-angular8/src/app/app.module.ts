@@ -23,10 +23,11 @@ import { MemberService } from './service/member.service';
 
 import { ExamListComponent } from './exam/list/exam-list.component';
 import { ExamAddComponent } from './exam/add/exam-add.component';
+import { ExamRstListComponent } from './exam/rst/rst-list.component';
+import { ExamRstViewComponent } from './exam/rst/rst-view.component';
 import { ExamService } from './service/exam.service';
 
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
-import {NestedMenuExample} from './shared/left/nested-menu-example';
 
 import { MessagesComponent } from './shared/messages/messages.component';
 
@@ -45,7 +46,6 @@ import { MessagesComponent } from './shared/messages/messages.component';
     MaterialModule,
     FormsModule, ReactiveFormsModule,
   ],
-  entryComponents: [NestedMenuExample],
   declarations: [
     HomePageComponent,
     Error404PageComponent,
@@ -54,14 +54,15 @@ import { MessagesComponent } from './shared/messages/messages.component';
     MemberAddComponent,
     ExamListComponent,
     ExamAddComponent,
-    NestedMenuExample,
+    ExamRstListComponent,
+    ExamRstViewComponent,
     MessagesComponent,
   ],
   providers: [
     MemberService, ExamService,
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
   ],
-  bootstrap: [ AppComponent, NestedMenuExample ]
+  bootstrap: [ AppComponent ]
 })
 
 export class AppModule {
