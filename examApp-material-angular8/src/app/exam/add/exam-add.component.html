@@ -1,0 +1,29 @@
+<div class="col-md-6 user-container">
+  <div>
+    <h2 style="margin: 20px"> 시험 정보 등록</h2>
+  </div>
+
+  <form class="example-form" #examForm="ngForm" (submit)="addExam()">
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td><mat-form-field class="example-full-width">
+            <mat-label>Exam Nm</mat-label>
+            <input matInput name="examNm">
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>사용여부</mat-label>
+          <input matInput name="isUse">
+      </mat-form-field></td>
+    </tr>
+    </table>
+
+    <section>
+      <div class="example-button-row">
+        <button type="submit" class="btn btn-primary">저장</button>
+      </div>
+    </section>
+    <mat-divider></mat-divider>
+        
+  </form>  
+</div>
