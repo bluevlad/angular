@@ -11,16 +11,19 @@ const httpOptions = {
 
 @Injectable()
 export class MemberService {
+  member: Member;
 
     constructor(private http: HttpClient) { }
-        baseUrl = 'http://localhost:8080/api/member/list/';
+    baseUrl = 'http://localhost:8080/api/member/';
 
     getMembers(): Observable<ApiResponse> {
-      return this.http.get<ApiResponse>(this.baseUrl);
+      return this.http.get<ApiResponse>(this.baseUrl + '/list/');
     }
 
-    createMember(member: Member): Observable<ApiResponse> {
-        return this.http.post<ApiResponse>(this.baseUrl, member);
+    createMember(member) {
+      const body = JSON.stringify(member);
+      return this.http.put(this.baseUrl + '/add/', body, httpOptions).pipe(res => res.pipe())
+      ;
   }
 
 }
