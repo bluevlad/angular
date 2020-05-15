@@ -1,5 +1,14 @@
 <div class="col-md-6 user-container">
-  <h2 style="margin: auto"> 시험 정보</h2>
+  <div>
+    <h2 style="margin: 20px"> 시험 정보</h2>
+  </div>
+  
+  <section>
+    <div class="example-button-row">
+      <a mat-raised-button color="primary" href="/exam-add" target="_self">등록</a>
+    </div>
+  </section>
+  <mat-divider></mat-divider>
 
 <table mat-table [dataSource]="exam" class="mat-elevation-z8">
 
