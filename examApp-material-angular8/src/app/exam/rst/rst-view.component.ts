@@ -14,12 +14,12 @@ export class ExamRstViewComponent implements OnInit {
 
   exam: Exam[];
 
-  displayedColumns: string[] = ['examCd', 'examNm', 'sbjCd', 'sbjNm', 'userId', 'userNm', 'sbjPoint'];
+  displayedColumns: string[] = ['itemNo', 'ans', 'YN'];
 
   constructor(private router: Router, private examService: ExamService) { }
 
   ngOnInit() {
-    this.examService.getExamRst()
+    this.examService.getExamRstView('1', '1', 'rained')
       .subscribe( data => {
         this.exam = data.examVOList;
       });

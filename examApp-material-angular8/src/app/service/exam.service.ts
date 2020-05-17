@@ -46,4 +46,11 @@ export class ExamService {
       return this.http.get<ApiResponse>(this.baseUrl + '/rst/list/');
     }
 
+    getExamRstView(examCd: string, sbjCd: string, userId: string): Observable<ApiResponse> {
+      const params = new FormData();
+      params.append('examCd', examCd);
+      params.append('sbjCd', sbjCd);
+      params.append('userId', userId);
+      return this.http.post<ApiResponse>(this.baseUrl + '/rst/view/', params);
+    }
 }
