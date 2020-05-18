@@ -5,4 +5,5 @@ export class ApiResponse {
   result: any;
   egovMapList: any;
   examVOList: any;
+  examVO: any;
 }

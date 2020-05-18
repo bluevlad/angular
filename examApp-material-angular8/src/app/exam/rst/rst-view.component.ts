@@ -13,15 +13,17 @@ import { Exam } from '../../model/exam';
 export class ExamRstViewComponent implements OnInit {
 
   exam: Exam[];
+  examVw: Exam;
 
-  displayedColumns: string[] = ['itemNo', 'ans', 'YN'];
+  displayedColumns: string[] = ['itemNo', 'ans', 'yn', 'passAns'];
 
   constructor(private router: Router, private examService: ExamService) { }
 
   ngOnInit() {
-    this.examService.getExamRstView('1', '1', 'rained')
+    this.examService.getExamRstView('1', '1', 'rainend')
       .subscribe( data => {
         this.exam = data.examVOList;
+        this.examVw = data.examVO;
       });
   }
 

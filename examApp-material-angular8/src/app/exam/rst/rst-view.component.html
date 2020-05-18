@@ -3,24 +3,38 @@
     <h2 style="margin: 20px"> 시험 성적 정보</h2>
   </div>
   
-<table mat-table [dataSource]="exam" class="mat-elevation-z8">
+  <table mat-table [dataSource]="exam" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
   <ng-container matColumnDef="itemNo">
-    <th mat-header-cell *matHeaderCellDef> itemNo. </th>
+    <th mat-header-cell *matHeaderCellDef> 문제번호 </th>
     <td mat-cell *matCellDef="let element"> {{element.itemNo}} </td>
   </ng-container>
 
   <ng-container matColumnDef="ans">
-    <th mat-header-cell *matHeaderCellDef> ans </th>
-    <td mat-cell *matCellDef="let element"> {{element.ans}} </td>
+    <th mat-header-cell *matHeaderCellDef> 제출답안 </th>
+    <td mat-cell *matCellDef="let element">
+       <section class="example-section">
+        <mat-radio-group [(ngModel)]="element.ans">
+          <mat-radio-button class="example-margin" value="1">1</mat-radio-button>
+          <mat-radio-button class="example-margin" value="2">2</mat-radio-button>
+          <mat-radio-button class="example-margin" value="3">3</mat-radio-button>
+          <mat-radio-button class="example-margin" value="4">4</mat-radio-button>
+        </mat-radio-group>
+      </section>
+      </td>
   </ng-container>
 
-  <ng-container matColumnDef="YN">
-    <th mat-header-cell *matHeaderCellDef> YN </th>
-    <td mat-cell *matCellDef="let element"> {{element.YN}} </td>
+  <ng-container matColumnDef="yn">
+    <th mat-header-cell *matHeaderCellDef> 정답여부 </th>
+    <td mat-cell *matCellDef="let element"> {{element.yn}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="passAns">
+    <th mat-header-cell *matHeaderCellDef> 정답 </th>
+    <td mat-cell *matCellDef="let element"> {{element.passAns}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

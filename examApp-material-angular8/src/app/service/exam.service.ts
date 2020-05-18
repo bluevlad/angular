@@ -19,7 +19,7 @@ export class ExamService {
       private messageService: MessageService) {
     }
 
-    private baseUrl = 'http://localhost:8080/api/exam';
+    private baseUrl = 'http://119.207.157.45:8080/api/exam';
 
     getExam(): Observable<ApiResponse> {
       return this.http.get<ApiResponse>(this.baseUrl + '/list/');
