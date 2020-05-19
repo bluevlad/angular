@@ -1,7 +1,7 @@
 import { Component, OnInit , Inject} from '@angular/core';
-import { Router } from '@angular/router';
-import { ExamService } from '../../service/exam.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
+import { ExamService } from '../../service/exam.service';
 import { Exam } from '../../model/exam';
 
 @Component({
@@ -17,10 +17,24 @@ export class ExamRstViewComponent implements OnInit {
 
   displayedColumns: string[] = ['itemNo', 'ans', 'yn', 'passAns'];
 
-  constructor(private router: Router, private examService: ExamService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private examService: ExamService) { }
+
+  public examCd: number;
+  public sbjCd: number;
+  public userId: string;
 
   ngOnInit() {
-    this.examService.getExamRstView('1', '1', 'rainend')
+
+    this.route.queryParamMap
+    .subscribe(params => {
+      this.examCd = +params.get('examCd');
+      this.sbjCd = +params.get('sbjCd');
+      this.userId = params.get('userId');
+    });
+
+
+
+    this.examService.getExamRstView(this.examCd, this.sbjCd, this.userId)
       .subscribe( data => {
         this.exam = data.examVOList;
         this.examVw = data.examVO;

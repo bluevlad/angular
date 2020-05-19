@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of } from 'rxjs/index';
+import { Observable } from 'rxjs/index';
 
 import { ApiResponse } from '../model/api.response';
 import { Exam } from '../model/exam';
@@ -46,10 +46,10 @@ export class ExamService {
       return this.http.get<ApiResponse>(this.baseUrl + '/rst/list/');
     }
 
-    getExamRstView(examCd: string, sbjCd: string, userId: string): Observable<ApiResponse> {
+    getExamRstView(examCd: number, sbjCd: number, userId: string): Observable<ApiResponse> {
       const params = new FormData();
-      params.append('examCd', examCd);
-      params.append('sbjCd', sbjCd);
+      params.append('examCd', examCd + '');
+      params.append('sbjCd', sbjCd + '');
       params.append('userId', userId);
       return this.http.post<ApiResponse>(this.baseUrl + '/rst/view/', params);
     }

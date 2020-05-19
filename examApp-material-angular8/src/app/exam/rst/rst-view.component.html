@@ -3,6 +3,22 @@
     <h2 style="margin: 20px"> 시험 성적 정보</h2>
   </div>
   
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>{{examVw.examNm}}</span>
+    </mat-toolbar-row>
+  
+    <mat-toolbar-row>
+      <span>{{examVw.sbjNm}}</span>
+      <span class="example-spacer"></span>
+    </mat-toolbar-row>
+  
+    <mat-toolbar-row>
+      <span>{{examVw.userNm}}</span>
+      <span class="example-spacer"></span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
   <table mat-table [dataSource]="exam" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.

@@ -13,6 +13,7 @@ import { Exam } from '../../model/exam';
 export class ExamRstListComponent implements OnInit {
 
   exam: Exam[];
+  examCd: string;
 
   displayedColumns: string[] = ['examCd', 'examNm', 'sbjCd', 'sbjNm', 'userId', 'userNm', 'sbjPoint'];
 
@@ -23,6 +24,10 @@ export class ExamRstListComponent implements OnInit {
       .subscribe( data => {
         this.exam = data.examVOList;
       });
+  }
+
+  onClick(): void {
+    this.examCd = '';
   }
 
 }
