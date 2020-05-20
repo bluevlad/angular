@@ -29,8 +29,7 @@ export class ExamService {
       const params = new FormData();
       params.append('examNm', examNm);
       params.append('isUse', isUse);
-      return this.http
-      .post<ApiResponse>(this.baseUrl + '/add/', params)
+      return this.http.post<ApiResponse>(this.baseUrl + '/add/', params)
       .toPromise()
       .then(response => {
         return response.examVOList as Exam;

@@ -3,24 +3,24 @@
     <h2 style="margin: 20px"> 시험 정보 등록</h2>
   </div>
 
-  <form class="example-form" #examForm="ngForm">
+  <form class="example-form" [formGroup]="examForm" (ngSubmit)="addExam()">
 
     <table class="example-full-width" cellspacing="0">
       <tr>
         <td><mat-form-field class="example-full-width">
             <mat-label>Exam Nm</mat-label>
-            <input matInput name="examNm">
+            <input matInput placeholder="examNm" formControlName="examNm">
         </mat-form-field></td>
         <td><mat-form-field class="example-full-width">
           <mat-label>사용여부</mat-label>
-          <input matInput name="isUse">
+          <input matInput placeholder="isUse" formControlName="isUse">
       </mat-form-field></td>
     </tr>
     </table>
 
     <section>
       <div class="example-button-row">
-        <button type="submit" class="btn btn-primary">저장</button>
+        <button type="submit" class="btn btn-primary" (click)="addExam()">저장</button>
       </div>
     </section>
     <mat-divider></mat-divider>
