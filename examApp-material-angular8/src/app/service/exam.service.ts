@@ -15,8 +15,9 @@ const httpOptions = {
 export class ExamService {
 
     constructor(
-      private http: HttpClient,
-      private messageService: MessageService) {
+        private http: HttpClient,
+        private messageService: MessageService
+      ) {
     }
 
     private baseUrl = 'http://119.207.157.45:8080/api/exam';

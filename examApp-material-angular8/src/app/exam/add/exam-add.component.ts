@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, NgForm} from '@angular/forms';
 
 import { ExamService } from '../../service/exam.service';
-import { Exam } from '../../model/exam';
 
 @Component({
   selector: 'app-exam-add',
@@ -14,7 +13,9 @@ export class ExamAddComponent {
 
   examForm: FormGroup;
 
-  constructor( private examService: ExamService, ) {
+  constructor(
+    private examService: ExamService,
+) {
     this.examForm = new FormGroup({
       examNm: new FormControl('', [Validators.required]),
       isUse: new FormControl('', )
