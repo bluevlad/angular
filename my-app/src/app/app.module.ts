@@ -12,6 +12,7 @@ import { MemberService } from './service/member.service';
 import { ExamListComponent } from './exam/list/exam-list.component';
 import { ExamService } from './service/exam.service';
 import { StatSbjComponent } from './exam/stat/sbj.component';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { StatSbjComponent } from './exam/stat/sbj.component';
     BrowserAnimationsModule,
     routing,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgGridModule.withComponents([])
   ],
  declarations: [
     AppComponent,
