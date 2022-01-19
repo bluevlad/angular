@@ -22,8 +22,11 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 import { AgmCoreModule} from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import { ExamService } from './service/exam.service';
 import { MessagesComponent } from './messages/messages.component';
+import { BadResponseInterceptor } from './interceptor/bad-response.interceptor';
 
 @NgModule({
   imports: [
@@ -41,10 +44,13 @@ import { MessagesComponent } from './messages/messages.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    ExamListComponent,
     MessagesComponent,
+    ExamListComponent,
   ],
-  providers: [ExamService],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: BadResponseInterceptor, multi: true },
+    ExamService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

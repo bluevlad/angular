@@ -20,18 +20,11 @@ export class ExamListComponent implements OnInit {
   
   constructor(private router: Router, private http: HttpClient, private examService: ExamService) { }
 
-  /*  ngOnInit() {
+    ngOnInit() {
     this.examService.getExam()
       .subscribe( data => {
         this.exam = data.examVOList;
       });
   }
-*/
 
-  ngOnInit() {
-    this.http.get<any>('https://api.npms.io/v2/search?q=scope:angular')
-    .subscribe(data => {
-        this.exam = data.package;
-    })        
-}
 }
